@@ -1,4 +1,5 @@
 #include "input.h"
+#include <GLFW/glfw3.h>
 
 using namespace std;
 
@@ -7,27 +8,27 @@ void keyboard(GLFWwindow * window, int key, int scancode, int action, int mods) 
         glfwSetWindowShouldClose(window, GLFW_TRUE);
     }    
     if (movetype != NONE) return;
-    if (key == GLFW_KEY_UP && action == GLFW_PRESS) {
+    if (key == GLFW_KEY_X && !mods && action == GLFW_PRESS) {
         movetype = X;
         animationstart = glfwGetTime();
     }    
-    if (key == GLFW_KEY_DOWN && action == GLFW_PRESS) {
+    if (key == GLFW_KEY_X && mods == GLFW_MOD_SHIFT && action == GLFW_PRESS) {
         movetype = Xi;
         animationstart = glfwGetTime();
     }    
-    if (key == GLFW_KEY_LEFT && !mods && action == GLFW_PRESS) {
+    if (key == GLFW_KEY_Y && !mods && action == GLFW_PRESS) {
         movetype = Y;
         animationstart = glfwGetTime();
     }    
-    if (key == GLFW_KEY_RIGHT && !mods && action == GLFW_PRESS) {
+    if (key == GLFW_KEY_Y && mods == GLFW_MOD_SHIFT && action == GLFW_PRESS) {
         movetype = Yi;
         animationstart = glfwGetTime();
     }    
-    if (key == GLFW_KEY_RIGHT && mods == GLFW_MOD_SHIFT && action == GLFW_PRESS) {
+    if (key == GLFW_KEY_Z && !mods && action == GLFW_PRESS) {
         movetype = Z;
         animationstart = glfwGetTime();
     } 
-    if (key == GLFW_KEY_LEFT && mods == GLFW_MOD_SHIFT && action == GLFW_PRESS) {
+    if (key == GLFW_KEY_Z && mods == GLFW_MOD_SHIFT && action == GLFW_PRESS) {
         movetype = Zi;
         animationstart = glfwGetTime();
     }    

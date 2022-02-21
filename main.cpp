@@ -5,7 +5,7 @@
 using namespace std;
 
 int main() {
-    GLFWwindow * window = initWindow("rubik", 800, 600);
+    GLFWwindow * window = initWindow("rubik", 1200, 800);
     setCallbacks(window);
     run(window);
     glfwTerminate();
